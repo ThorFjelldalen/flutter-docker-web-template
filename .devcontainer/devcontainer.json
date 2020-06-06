@@ -1,0 +1,19 @@
+{
+    "name": "flutter_docker",
+    "context": "..",
+    "dockerFile": "../Dockerfile",
+    "remoteUser": "developer",
+    // Won't work on windows/mac according to the followed guide,
+    // and we won't use it since we're running web app
+    // "mounts": [
+    //     "source=/dev/bus/usb,target=/dev/bus/usb,type=bind"
+    // ],
+    "settings": {
+        "terminal.integrated.shell.linux": null
+    },
+    "runArgs": ["--privileged"],
+    "extensions": ["dart-code.flutter"],
+    // "workspaceMount": "source=${localWorkspaceFolder}/workspace,target=/home/developer/workspace,type=bind,consistency=delegated",
+    "workspaceMount": "source=${localWorkspaceFolder}/workspace,target=/home/developer/workspace,type=bind,consistency=delegated",
+    "workspaceFolder": "/home/developer/workspace"
+}
